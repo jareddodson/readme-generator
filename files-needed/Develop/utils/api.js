@@ -15,10 +15,3 @@ const api = {
 };
 
 module.exports = api;
-
-git restore --staged File
-
-files/needed/Develop/utils/api.js
-node_modules
-package.json
-package-lock.json
