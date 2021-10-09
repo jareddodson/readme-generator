@@ -48,7 +48,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'What license did you use for your project?',
-        choices: ['None', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero', 'GNU General', 'GNU Lesser General', 'Mozilla Public License 2.0', 'The Unlicense']
+        choices: ['None', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero', 'GNU General', 'GNU Lesser General', 'Mozilla Public License 2.0', 'The Unlicense']
     },
     {
         type: 'input',
@@ -91,9 +91,12 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((inquirerResponse, data) => {
+    .then((data) => {
         console.log('Generating README...');
-        fs.writeFileSync('README.md', inquirerResponse, data);
+        return generateMarkdown(data);
+    })
+    .then((template) => {
+        writeToFile('README.md', template)
     })
     .catch((err) => {
         console.log(err);
