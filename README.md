@@ -17,6 +17,8 @@ To use this simple README generator, first install Node.js as well as Inquirer. 
 
 ## Usage Information
 Once you have typed "node index" or "node index.js" just follow the prompts in your command-line and you will easily and successfully create a high quality README!
+Check out this video for an in-depth look at how to run this README Generator:
+https://watch.screencastify.com/v/Pnh5WjrJP7YMB8LbV4vz
 
 ## Contribution Guidelines
 You are more than welcome to fork this code and play around with it.
